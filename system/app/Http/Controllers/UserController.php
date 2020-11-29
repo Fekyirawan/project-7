@@ -8,7 +8,10 @@ use App\Models\UserDetail;
 class UserController extends Controller{
 
 	function index(){
-		$data['list_user'] = User::all();
+		// $data['list_user'] = User::all();
+		// $data['list_user'] = User::has('produk')->get();
+		//$data['list_user'] = User::has('produk', '>=', '2')->get();
+		 $data['list_user'] = User::withCount('produk')->get();
 		return view('user.index', $data);
 	}
 	function create(){

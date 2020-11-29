@@ -14,7 +14,7 @@ class HomeController extends Controller{
 
 
 	function client(){
-		return view('template.client');
+		return view('client.client');
 	}
 
 		function test($produk){
